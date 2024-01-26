@@ -21,7 +21,7 @@ function ArrivalInfo() {
   const callApi = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/arrivalinfo/${id}`
+        `https://port-0-daejeonsubwayback-ghdys32blruqgwex.sel5.cloudtype.app/arrivalinfo/${id}`
       );
       const resultList = response.data.response.body.items.item;
       setTimeData(resultList);
