@@ -30,7 +30,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy":"https://port-0-daejeonsubwayback-ghdys32blruqgwex.sel5.cloudtype.app/",
+  "proxy":"https://port-0-daejeonsubwayback-ghdys32blrus26tf.sel5.cloudtype.app/",
   "eslintConfig": {
     "extends": [
       "react-app",

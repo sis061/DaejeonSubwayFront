@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const ArrivalInfo = styled.div`
-  //   background-color: #95dd56;
   max-width: 480px;
+  width: 90%;
   height: auto;
+  min-height: 100vh;
   margin: 0 auto;
-  margin-top: 5rem;
+  margin-top: 4rem;
   display: flex;
   flex-flow: column;
   position: relative;
@@ -36,14 +37,14 @@ export const ArrivalInfo = styled.div`
   }
 
   h1 {
-    margin-top: 12rem;
-    margin-bottom: 12rem;
-    font-size: 5.5rem;
+    margin-top: 8rem;
+    margin-bottom: 9rem;
+    font-size: 4rem;
   }
 
   .station-drct-wrap {
     position: absolute;
-    top: 12.5%;
+    top: 5.5%;
     width: 100%;
     height: auto;
 
@@ -104,12 +105,12 @@ export const ArrivalInfo = styled.div`
 
   .info-text {
     position:fixed;
-    width:100%;
-    left: 50%;
+    width: 100%;
+    margin-left: 45%;
     transform: translate(-50%, 0);
-    bottom:2rem;
-    font-size:0.8rem;
-    text-align:center;
-    opacity:0.7;
+    bottom: 0;
+    font-size: 0.7rem;
+    text-align: center;
+    opacity: 0.7;
   }
 `;
