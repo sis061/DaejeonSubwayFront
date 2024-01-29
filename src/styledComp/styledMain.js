@@ -5,7 +5,7 @@ export const Main = styled.main`
   background-color: #007448;
   max-width: 480px;
   width: 90%;
-  height: 100%;
+  height: 100vh;
   margin: 0 auto;
   display: flex;
   flex-flow: column;
