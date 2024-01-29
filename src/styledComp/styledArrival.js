@@ -99,10 +99,9 @@ export const ArrivalInfo = styled.div`
   }
 
   .footer {
-    position:fixed;
     bottom: 0;
     width: 100%;
-    left: 50%;
+    margin-left: 50%;
     transform: translate(-50%, 0);
     margin-bottom: 1vh;
     font-size: 0.7rem;
