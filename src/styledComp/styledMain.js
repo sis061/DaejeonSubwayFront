@@ -5,26 +5,28 @@ export const Main = styled.main`
   background-color: #007448;
   max-width: 480px;
   width: 90%;
-  height: auto;
-  min-height: 100vh;
+  height: 100%;
   margin: 0 auto;
-  margin-top: 4rem;
-  // margin-bottom: 1rem;
   display: flex;
   flex-flow: column;
-  position: relative;
+
+  .img-wrap{
+    position:relative;
+  }
 
   .main-bg {
     position: absolute;
     width: 30%;
     height: auto;
-    top: -1.5%;
+    top: 5vh;
     left: 57.5%;
     z-index: 0;
   }
 
   h1 {
-    margin-top: 3rem;
+    text-align: center;
+    font-size: 4.5vh;
+    margin-top: 11vh;
     z-index: 1;
   }
 
@@ -36,11 +38,13 @@ export const Main = styled.main`
     justify-content: flex-start;
   }
 
-  .info-text {
-    width: 100%;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
+  .footer {
+    position:fixed;
     bottom: 0;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-bottom: 1vh;
     font-size: 0.7rem;
     text-align: center;
     opacity: 0.7;
@@ -50,7 +54,7 @@ export const Main = styled.main`
 export const StationList = styled.div`
   background-color: #00834c;
   width: 21%;
-  height: 5.5rem;
+  height: 9vh;
   margin: 2%;
   text-align: center;
   display: flex;
@@ -73,6 +77,6 @@ export const StationList = styled.div`
   }
 
   .list-item-inner {
-    padding: 7%;
+    padding: 0;
   }
 `;

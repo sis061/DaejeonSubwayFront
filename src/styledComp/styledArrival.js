@@ -3,18 +3,16 @@ import styled from "styled-components";
 export const ArrivalInfo = styled.div`
   max-width: 480px;
   width: 90%;
-  height: auto;
-  min-height: 100vh;
+  height: 100%;
   margin: 0 auto;
-  margin-top: 4rem;
   display: flex;
   flex-flow: column;
   position: relative;
 
   .go-to-main {
     position: absolute;
-    top: -5%;
-    left: 1%;
+    top: 1.5vh;
+    left: 1vw;
     color: #fff;
     opacity:0.5;
     transition:0.3s;
@@ -37,38 +35,35 @@ export const ArrivalInfo = styled.div`
   }
 
   h1 {
-    margin-top: 8rem;
-    margin-bottom: 9rem;
+    margin-top: 24vh;
+    margin-bottom: 19vh;
     font-size: 4rem;
-  }
+    text-align: center;
+    font-size:6vh;
+    z-index: 1;
 
-  .station-drct-wrap {
-    position: absolute;
-    top: 5.5%;
-    width: 100%;
-    height: auto;
-
-    display: flex;
-    justify-content: space-between;
-
-    font-size: 1.7rem;
-    font-weight: 600;
   }
 
   .prevArrivalInfo,
   .nextArrivalInfo {
     opacity: 0.5;
     transition:0.3s;
+    font-size: 1.7rem;
+    font-weight: 600;
   }
 
   .prevArrivalInfo {
+    position: absolute;
+    top: 12.5vh;
     &:hover {
       opacity: 1;
     }
   }
 
   .nextArrivalInfo {
-    margin-top: 52.5%;
+    position: absolute;
+    top:40vh;
+    right:0;
     &:hover {
       opacity: 1;
     }
@@ -103,12 +98,13 @@ export const ArrivalInfo = styled.div`
     }
   }
 
-  .info-text {
+  .footer {
     position:fixed;
-    width: 100%;
-    margin-left: 45%;
-    transform: translate(-50%, 0);
     bottom: 0;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-bottom: 1vh;
     font-size: 0.7rem;
     text-align: center;
     opacity: 0.7;

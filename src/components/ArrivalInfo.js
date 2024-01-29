@@ -1,13 +1,26 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
-import { faGrip, faAnglesLeft, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGrip,
+  faAnglesLeft,
+  faAnglesRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as styled from "../styledComp/styledArrival";
 
 function ArrivalInfo() {
+  const setVh = () => {
+    document.documentElement.style.setProperty(
+      "--vh",
+      `${window.innerHeight}px`
+    );
+  };
+  window.addEventListener("resize", setVh);
+  setVh();
+
   // URL 파라미터에서 id 추출
   let { id } = useParams();
 
@@ -129,11 +142,11 @@ function ArrivalInfo() {
 
   const prevStation = StationIdData[id - 102]?.name;
   const nextStation = StationIdData[id - 100]?.name;
-  const [prevStationClassName, setPrevStationClassName] = useState('');
-  const [nextStationClassName, setNextStationClassName] = useState('');
+  const [prevStationClassName, setPrevStationClassName] = useState("");
+  const [nextStationClassName, setNextStationClassName] = useState("");
 
   useEffect(() => {
-    setPrevStationClassName(prevStation === undefined ? 'hidden' : '');
+    setPrevStationClassName(prevStation === undefined ? "hidden" : "");
   }, [prevStation, prevStationClassName]);
 
   const handlePrevLinkClick = () => {
@@ -143,12 +156,12 @@ function ArrivalInfo() {
   };
 
   useEffect(() => {
-    setNextStationClassName(nextStation === undefined ? 'hidden' : '');
+    setNextStationClassName(nextStation === undefined ? "hidden" : "");
   }, [nextStation]);
 
   const handleNextLinkClick = () => {
     if (nextStation === undefined) {
-      setNextStationClassName('hidden');
+      setNextStationClassName("hidden");
     }
   };
 
@@ -158,21 +171,27 @@ function ArrivalInfo() {
         <FontAwesomeIcon icon={faGrip} size="4x" />
         <span className="go-to-main-text">전체 목록 보기</span>
       </Link>
-      <div className="station-drct-wrap">
-        <span className="prevArrivalInfo">
-          <Link to={`/arrivalinfo/${Number(id) - 1}`} onClick={handlePrevLinkClick} className={prevStationClassName}>
-            <FontAwesomeIcon icon={faAnglesLeft} style={{marginRight:`5px`}} />
-            {prevStation}
-          </Link>
-        </span>
-        <span className="nextArrivalInfo">
-          <Link to={`/arrivalinfo/${Number(id) + 1}`} onClick={handleNextLinkClick} className={nextStationClassName}>
-            {nextStation}
-            <FontAwesomeIcon icon={faAnglesRight} style={{marginLeft:`5px`}} />
-          </Link>
-        </span>
-      </div>
+      <span className="prevArrivalInfo">
+        <Link
+          to={`/arrivalinfo/${Number(id) - 1}`}
+          onClick={handlePrevLinkClick}
+          className={prevStationClassName}
+        >
+          <FontAwesomeIcon icon={faAnglesLeft} style={{ marginRight: `5px` }} />
+          {prevStation}
+        </Link>
+      </span>
       <h1>{StationIdData[id - 101]?.name}</h1>
+      <span className="nextArrivalInfo">
+        <Link
+          to={`/arrivalinfo/${Number(id) + 1}`}
+          onClick={handleNextLinkClick}
+          className={nextStationClassName}
+        >
+          {nextStation}
+          <FontAwesomeIcon icon={faAnglesRight} style={{ marginLeft: `5px` }} />
+        </Link>
+      </span>
       <div className="info-inner-wrap">
         <h3>판암행</h3>
         <h3>반석행</h3>
@@ -186,11 +205,11 @@ function ArrivalInfo() {
           분
         </p>
       </div>
-      <div className="info-text">
-        <p>© 2021. 정성우. all rights reserved.</p>
-        <p>대전교통공사에서 제공하는 열차시각표를 기준으로 제작되었습니다.</p>
-      </div>
-      </styled.ArrivalInfo>
+      <div className="footer">
+          <p>© 2024. 정성우. all rights reserved.</p>
+          <p>대전교통공사에서 제공하는 열차시각표를 기준으로 제작되었습니다.</p>
+        </div>
+    </styled.ArrivalInfo>
   );
 }
 
